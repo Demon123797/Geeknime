@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biblioteca de Animes</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #0f0f0f;
+      font-family: Arial, sans-serif;
+      color: #fff;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      font-size: 28px;
+      font-weight: bold;
+      background: #1a1a1a;
+      border-bottom: 2px solid #333;
+    }
+
+    .categorias {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .categoria {
+      background: #1a1a1a;
+      padding: 10px;
+      border-radius: 12px;
+      text-align: center;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .categoria:hover {
+      transform: scale(1.05);
+      background: #222;
+    }
+
+    .categoria img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .lista-animes {
+      display: none;
+      padding: 20px;
+    }
+
+    .anime {
+      display: inline-block;
+      width: 180px;
+      margin: 10px;
+      text-align: center;
+    }
+
+    .anime img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .voltar {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #333;
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<header>Biblioteca de Animes</header>
+
+<div class="categorias" id="categorias">
+  <div class="categoria" onclick="abrirCategoria('isekai')"><img src="https://i.imgur.com/IE8YqZd.jpeg"><p>Isekai</p></div>
+  <div class="categoria" onclick="abrirCategoria('romance')"><img src="https://i.imgur.com/2w8Z8oH.jpeg"><p>Romance</p></div>
+  <div class="categoria" onclick="abrirCategoria('acao')"><img src="https://i.imgur.com/lDazxQe.jpeg"><p>Ação</p></div>
+  <div class="categoria" onclick="abrirCategoria('comedia')"><img src="https://i.imgur.com/X0uJzEM.jpeg"><p>Comédia</p></div>
+  <div class="categoria" onclick="abrirCategoria('terror')"><img src="https://i.imgur.com/2TgJoci.jpeg"><p>Terror</p></div>
+  <div class="categoria" onclick="abrirCategoria('slice')"><img src="https://i.imgur.com/Z2QTIoX.jpeg"><p>Slice of Life</p></div>
+  <div class="categoria" onclick="abrirCategoria('shounen')"><img src="https://i.imgur.com/vcQqS0o.jpeg"><p>Shounen</p></div>
+  <div class="categoria" onclick="abrirCategoria('shoujo')"><img src="https://i.imgur.com/Gwq3Y2s.jpeg"><p>Shoujo</p></div>
+  <div class="categoria" onclick="abrirCategoria('fantasia')"><img src="https://i.imgur.com/ncJXlLa.jpeg"><p>Fantasia</p></div>
+  <div class="categoria" onclick="abrirCategoria('misterio')"><img src="https://i.imgur.com/3f0StcS.jpeg"><p>Mistério</p></div>
+  <div class="categoria" onclick="abrirCategoria('suspense')"><img src="https://i.imgur.com/wHkXx1m.jpeg"><p>Suspense</p></div>
+  <div class="categoria" onclick="abrirCategoria('scifi')"><img src="https://i.imgur.com/8qQn1we.jpeg"><p>Sci-fi</p></div>
+  <div class="categoria" onclick="abrirCategoria('drama')"><img src="https://i.imgur.com/EZXY6qR.jpeg"><p>Drama</p></div>
+  <div class="categoria" onclick="abrirCategoria('esportes')"><img src="https://i.imgur.com/9mFv35Z.jpeg"><p>Esportes</p></div>
+  <div class="categoria" onclick="abrirCategoria('harem')"><img src="https://i.imgur.com/aJuLWVP.jpeg"><p>Harém</p></div>
+  <div class="categoria" onclick="abrirCategoria('haremrev')"><img src="https://i.imgur.com/HkzYkQc.jpeg"><p>Harém Reverso</p></div>
+</div>
+
+  <div class="categoria" onclick="abrirCategoria('romance')">
+    <img src="https://i.imgur.com/2w8Z8oH.jpeg" alt="Romance" />
+    <p>Romance</p>
+  </div>
+
+  <div class="categoria" onclick="abrirCategoria('acao')">
+    <img src="https://i.imgur.com/lDazxQe.jpeg" alt="Ação" />
+    <p>Ação</p>
+  </div>
+</div>
+
+<!-- LISTA: ISEKAI -->
+<div class="lista-animes" id="isekai">
+  <button class="voltar" onclick="voltar()">Voltar</button>
+  <h2>Isekais</h2>
+  <div class="anime">
+    <img src="https://i.imgur.com/xC3Lwki.jpeg" />
+    <p>Mushoku Tensei</p>
+  </div>
+  <div class="anime">
+    <img src="https://i.imgur.com/DsrmE9q.jpeg" />
+    <p>Re:Zero</p>
+  </div>
+  <div class="anime">
+    <img src="https://i.imgur.com/tp1RSvD.jpeg" />
+    <p>Slime</p>
+  </div>
+</div>
+
+<!-- LISTA: ROMANCE -->
+<div class="lista-animes" id="romance">
+  <button class="voltar" onclick="voltar()">Voltar</button>
+  <h2>Romance</h2>
+  <div class="anime">
+    <img src="https://i.imgur.com/5o2t9Pk.jpeg" />
+    <p>Your Name</p>
+  </div>
+  <div class="anime">
+    <img src="https://i.imgur.com/I7iM2R3.jpeg" />
+    <p>A Silent Voice</p>
+  </div>
+</div>
+
+<!-- LISTA: AÇÃO -->
+<div class="lista-animes" id="acao">
+  <button class="voltar" onclick="voltar()">Voltar</button>
+  <h2>Ação</h2>
+  <div class="anime">
+    <img src="https://i.imgur.com/2cCSljg.jpeg" />
+    <p>Attack on Titan</p>
+  </div>
+  <div class="anime">
+    <img src="https://i.imgur.com/CY8CHjx.jpeg" />
+    <p>Demon Slayer</p>
+  </div>
+</div>
+
+<script>
+  function abrirCategoria(id) {
+    document.getElementById('categorias').style.display = 'none';
+    document.getElementById(id).style.display = 'block';
+  }
+
+  function voltar() {
+    document.querySelectorAll('.lista-animes').forEach(div => div.style.display = 'none');
+    document.getElementById('categorias').style.display = 'grid';
+  }
+</script>
+
+
+
+<!-- LISTA: COMEDIA -->
+<div class="lista-animes" id="comedia">
+  <button class="voltar" onclick="voltar()">Voltar</button>
+  <h2>Comédia</h2>
+  <div class="anime"><img src="https://i.imgur.com/pkG5a7m.jpeg"><p>Konosuba</p></div>
+  <div class="anime"><img src="https://i.imgur.com/oy7i6ch.jpeg"><p>Gintama</p></div>
+</div>
+
+<!-- LISTA: TERROR -->
+<div class="lista-animes" id="terror">
+  <button class="voltar" onclick="voltar()">Voltar</button>
+  <h2>Terror</h2>
+  <div class="anime"><img src="https://i.imgur.com/E2sM0kt.jpeg"><p>Another</p></div>
+  <div class="anime"><img src="https://i.imgur.com/E4NOwX8.jpeg"><p>Higurashi</p></div>
+</div>
+
+<!-- LISTA: SLICE OF LIFE -->
+<div class="lista-animes" id="slice">
+  <button class="voltar" onclick="voltar()">Voltar</button>
+  <h2>Slice of Life</h2>
+  <div class="anime"><img src="https://i.imgur.com/VYwtkPt.jpeg"><p>Clannad</p></div>
+  <div class="anime"><img src="https://i.imgur.com/zpt1WYg.jpeg"><p>Barakamon</p></div>
+</div>
+
+<!-- LISTA: SHOUNEN -->
+<div class="lista-animes" id="shounen">
+  <button class="voltar" onclick="voltar()">Voltar</button>
+  <h2>Shounen</h2>
+  <div class="anime"><img src="https://i.imgur.com/ZR7vbl9.jpeg"><p>Naruto</p></div>
+  <div class="anime"><img src="https://i.imgur.com/jmLLYpg.jpeg"><p>One Piece</p></div>
+</div>
+
+<!-- LISTA: SHOUJO -->
+<div class="lista-animes" id="shoujo">
+  <button class="voltar" onclick="voltar()">Voltar</button>
+  <h2>Shoujo</h2>
+  <div class="anime"><img src="https://i.imgur.com/mUQmYEF.jpeg"><p>Fruits Basket</p></div>
+  <div class="anime"><img src="https://i.imgur.com/UuIA3V3.jpeg"><p>Kimi ni Todoke</p></div>
+</div>
+
+<!-- LISTA: FANTASIA -->
+<div class="lista-animes" id="fantasia">
+  <button class="voltar" onclick="voltar()">Voltar</button>
+  <h2>Fantasia</h2>
+  <div class="anime"><img src="https://i.imgur.com/B6F3yAZ.jpeg"><p>Made in Abyss</p></div>
+  <div class="anime"><img src="https://i.imgur.com/xCKPVQf.jpeg"><p>Fate/Zero</p></div>
+</div>
+
+<!-- LISTA: MISTERIO -->
+<div class="lista-animes" id="misterio">
+  <button class="voltar" onclick="voltar()">Voltar</button>
+  <h2>Mistério</h2>
+  <div class="anime"><img src="https://i.imgur.com/8wGmmdR.jpeg"><p>Erased</p></div>
+  <div class="anime"><img src="https://i.imgur.com/M1n6nqd.jpeg"><p>Death Note</p></div>
+</div>
+
+<!-- LISTA: SUSPENSE -->
+<div class="lista-animes" id="suspense">
+  <button class="voltar" onclick="voltar()">Voltar</button>
+  <h2>Suspense</h2>
+  <div class="anime"><img src="https://i.imgur.com/1qbTZ9n.jpeg"><p>Monster</p></div>
+  <div class="anime"><img src="https://i.imgur.com/QkHqzQH.jpeg"><p>Psycho-Pass</p></div>
+</div>
+
+<!-- LISTA: SCI-FI -->
+<div class="lista-animes" id="scifi">
+  <button class="voltar" onclick="voltar()">Voltar</button>
+  <h2>Sci-fi</h2>
+  <div class="anime"><img src="https://i.imgur.com/2gP0bq8.jpeg"><p>Steins;Gate</p></div>
+  <div class="anime"><img src="https://i.imgur.com/zrervdO.jpeg"><p>Blame!</p></div>
+</div>
+
+<!-- LISTA: DRAMA -->
+<div class="lista-animes" id="drama">
+  <button class="voltar" onclick="voltar()">Voltar</button>
+  <h2>Drama</h2>
+  <div class="anime"><img src="https://i.imgur.com/5o2t9Pk.jpeg"><p>Your Lie in April</p></div>
+  <div class="anime"><img src="https://i.imgur.com/I7iM2R3.jpeg"><p>A Silent Voice</p></div>
+</div>
+
+<!-- LISTA: ESPORTES -->
+<div class="lista-animes" id="esportes">
+  <button class="voltar" onclick="voltar()">Voltar</button>
+  <h2>Esportes</h2>
+  <div class="anime"><img src="https://i.imgur.com/Pwv7owY.jpeg"><p>Haikyuu!!</p></div>
+  <div class="anime"><img src="https://i.imgur.com/AQqOjQy.jpeg"><p>Blue Lock</p></div>
+</div>
+
+<!-- LISTA: HAREM -->
+<div class="lista-animes" id="harem">
+  <button class="voltar" onclick="voltar()">Voltar</button>
+  <h2>Harém</h2>
+  <div class="anime"><img src="https://i.imgur.com/Zx3v6kC.jpeg"><p>High School DxD</p></div>
+  <div class="anime"><img src="https://i.imgur.com/NLYkG89.jpeg"><p>Rosario + Vampire</p></div>
+</div>
+
+<!-- LISTA: HAREM REVERSO -->
+<div class="lista-animes" id="haremrev">
+  <button class="voltar" onclick="voltar()">Voltar</button>
+  <h2>Harém Reverso</h2>
+  <div class="anime"><img src="https://i.imgur.com/AVhFHJw.jpeg"><p>Kamisama Kiss</p></div>
+  <div class="anime"><img src="https://i.imgur.com/pkAWB2d.jpeg"><p>Diabolik Lovers</p></div>
+</div>
+
+</body>
+</html>
